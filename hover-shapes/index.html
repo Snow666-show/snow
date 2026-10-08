@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="6frBE6MHWcSN7BtLGosu6E">
+<head data-page-node-id="oUWwYMyls8a3Px60gT4997">
+    <meta charset="UTF-8" data-page-node-id="yVp5IrmjM81EbxIrc0QzuZ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="cJL7Q4UeeUlbXcIyHMGUUr">
+    <title>Hover Shapes</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1d1b1a;
+        }
+        .stage{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+            padding:56px 32px
+        }
+        .cube{
+            width: 170px;
+            height: 170px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        /* 中间的 "hover" 字样，默认透明，滑过时显示 */
+        .cube::after{
+            content: "hover";
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, .9);
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        /* 上移 10px，阴影偏移量变为 0（变成四周发光），文字显现 */
+        .cube:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 0 24px var(--glow);
+        }
+        .cube:hover::after{
+            opacity: 1;
+        }
+
+        /* 1. 直角正方形：橙红渐变 */
+        .c1{
+            background: linear-gradient(135deg,#ff9a56,#ff5e62);
+            box-shadow: 0 10px 24px rgba(255, 94, 98, .35);
+            --glow: rgba(255, 94, 98, .6);
+        }
+
+        /* 2. 小圆角正方形：绿色渐变 */
+        .c2{
+            border-radius: 20px;
+            background: linear-gradient(135deg,#43e97b,#16b978);
+            box-shadow: 0 10px 24px rgba(22, 185, 120, .35);
+            --glow: rgba(22, 185, 120, .6);
+        }
+
+        /* 3. 大圆角正方形：紫罗兰渐变 */
+        .c3{
+            border-radius: 44px;
+            background: linear-gradient(135deg,#b39ddb,#9575cd);
+            box-shadow: 0 10px 24px rgba(149, 117, 205, .35);
+            --glow: rgba(149, 117, 205, .6);
+        }
+
+        /* 4. 圆形：橙黄渐变 */
+        .c4{
+            border-radius: 50%;
+            background: linear-gradient(135deg,#f6d365,#fda085);
+            box-shadow: 0 10px 24px rgba(253, 160, 133, .35);
+            --glow: rgba(253, 160, 133, .6);
+        }
+
+        /* 5. 中圆角正方形：青绿渐变 */
+        .c5{
+            border-radius: 32px;
+            background: linear-gradient(135deg,#45b39d,#1d5c50);
+            box-shadow: 0 10px 24px rgba(69, 179, 157, .35);
+            --glow: rgba(69, 179, 157, .6);
+        }
+
+        /* 6. 圆形：薰衣草紫渐变 */
+        .c6{
+            border-radius: 50%;
+            background: linear-gradient(135deg,#b8a6e8,#8a6fc8);
+            box-shadow: 0 10px 24px rgba(138, 111, 200, .35);
+            --glow: rgba(138, 111, 200, .6);
+        }
+    </style>
+</head>
+<body data-page-node-id="3Ki6MZwMpPjvYTfPxsHRqf">
+    <div class="stage" data-page-node-id="flFS3ImBMVqckeizz047VR">
+        <div class="cube c1" data-page-node-id="KtxgvL2hXAWs0Ck46uDYwg"></div>
+        <div class="cube c2" data-page-node-id="d94ODJuZVwZKuRoiE6eKl2"></div>
+        <div class="cube c3" data-page-node-id="6VTHXygElkon2fzTroZDXr"></div>
+        <div class="cube c4" data-page-node-id="bJoMsasaJBPDJaHUDv2bSv"></div>
+        <div class="cube c5" data-page-node-id="gBaR0K5FcfGcHTcmax6avA"></div>
+        <div class="cube c6" data-page-node-id="69Un0FJ1mAk53Xs2w8J5aL"></div>
+    </div>
+</body>
+</html>
